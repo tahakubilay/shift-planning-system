@@ -1,103 +1,139 @@
+<div align="center">
+
 # Shift Planning & Workforce Management System
 
-A rule-driven workforce scheduling and operations platform designed for complex municipal workforce planning, personnel constraints, operational tracking and analytics.
+### Rule-driven workforce scheduling for complex municipal operations
 
-## Overview
+<a href="https://github.com/tahakubilay/shift-planning-system">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=900&center=true&vCenter=true&width=820&lines=Complex+rules.+Real+people.+One+schedule.;Constraints+%E2%86%92+Planning+%E2%86%92+Analytics;Workforce+scheduling+beyond+a+calendar" alt="Animated project overview" />
+</a>
 
-This project was developed to solve a real-world scheduling problem where simple calendar-based shift assignment is not enough.
+<br/>
 
-The system is designed around a large number of operational parameters and business rules that affect how personnel can be scheduled, monitored and evaluated. Rather than treating shift planning as a basic CRUD workflow, the application models scheduling as a constrained operational process.
+[![Portfolio](https://img.shields.io/badge/Portfolio-Taha%20Kubilay-181717?style=for-the-badge&logo=github)](https://github.com/tahakubilay)
+[![Repository](https://img.shields.io/badge/Repository-Shift%20Planning-0A66C2?style=for-the-badge&logo=github)](https://github.com/tahakubilay/shift-planning-system)
+[![Status](https://img.shields.io/badge/Status-Portfolio%20Build-7C3AED?style=for-the-badge)](#-project-status)
+[![Demo](https://img.shields.io/badge/Live%20Demo-Coming%20Soon-F59E0B?style=for-the-badge&logo=vercel)](#-live-demo)
 
-## Problem
+<br/>
 
-Workforce scheduling becomes difficult when an organization needs to account for:
+![Last Commit](https://img.shields.io/github/last-commit/tahakubilay/shift-planning-system?style=flat-square)
+![Repo Size](https://img.shields.io/github/repo-size/tahakubilay/shift-planning-system?style=flat-square)
 
-- Different personnel roles and responsibilities
-- Complex shift rules and operational constraints
-- Availability and assignment restrictions
-- Fair workload distribution
-- Historical shift information
-- Ongoing personnel tracking
-- Reporting and operational statistics
-
-Manual planning becomes increasingly difficult to maintain as these rules interact.
-
-## Solution
-
-The platform centralizes the planning process and provides a structured environment for creating, managing and monitoring workforce schedules.
-
-It is intended to help administrators make scheduling decisions while preserving operational rules and providing visibility into personnel activity and historical data.
-
-## Core Capabilities
-
-- Rule-driven shift planning
-- Personnel and workforce management
-- Operational constraint handling
-- Shift assignment and schedule tracking
-- Historical records
-- Statistics and reporting
-- Administrative workflows
-- Centralized workforce visibility
-
-## Engineering Focus
-
-The main engineering challenge in this project is not the interface itself, but the business logic behind the scheduling process.
-
-The application needs to represent many interacting rules and parameters while keeping the system maintainable and understandable.
-
-Key areas include:
-
-- Business-rule modelling
-- Constraint-aware scheduling logic
-- Data consistency
-- Workflow design
-- Historical tracking
-- Reporting and analytics
-- Maintainable domain architecture
-
-## Architecture
-
-A detailed architecture diagram and technical breakdown will be added as the public portfolio version of the project is prepared.
-
-The public repository will document:
-
-- Application architecture
-- Core domain model
-- Scheduling workflow
-- Data model
-- API structure
-- Authentication and authorization approach
-- Deployment architecture
-
-## Screenshots
-
-Product screenshots and workflow examples will be added to this section.
-
-## Demo
-
-A portfolio-safe demo environment is planned with synthetic data only.
-
-No real municipal personnel data, production credentials or private organizational information will be included in the public version.
-
-## Project Status
-
-**Portfolio preparation in progress.**
-
-The original project is being prepared for public presentation by separating sensitive configuration and private operational data from the codebase.
-
-## Why This Project Matters
-
-This project demonstrates experience with software where the difficult part is not simply storing and displaying data, but translating real operational requirements into a maintainable software system.
-
-It reflects work across:
-
-- Full-stack product development
-- Complex business logic
-- Enterprise workflow design
-- Data modelling
-- Operational software
-- Reporting and analytics
+</div>
 
 ---
 
-Built by **Taha Kubilay**
+## ✨ At a Glance
+
+| | |
+|---|---|
+| 🏛️ **Context** | Complex municipal workforce operations |
+| 🗓️ **Problem** | Shift planning under many interacting rules and constraints |
+| 🧠 **Core Challenge** | Translating operational policy into maintainable scheduling logic |
+| 📊 **Beyond Scheduling** | History, tracking, statistics and operational visibility |
+| 🔐 **Public Version** | Synthetic data only |
+| 🚀 **Demo** | Planned portfolio sandbox |
+
+## 🔎 Why This Exists
+
+A normal calendar can assign someone to a shift.
+
+A real workforce system has to answer much harder questions:
+
+- **Who is eligible?**
+- **Which rules apply?**
+- **What assignments conflict?**
+- **How should workload be distributed?**
+- **What happened historically?**
+- **Can managers understand the result?**
+
+That turns scheduling into a **constraint and business-rule problem**, not a simple CRUD workflow.
+
+## ⚙️ Scheduling Flow
+
+```mermaid
+flowchart LR
+    P[Personnel] --> RULES[Rules & Constraints]
+    AV[Availability] --> RULES
+    OPS[Operational Needs] --> RULES
+    RULES --> PLAN[Shift Planning]
+    PLAN --> CHECK[Validation]
+    CHECK --> SCHEDULE[Published Schedule]
+    SCHEDULE --> HISTORY[(History)]
+    HISTORY --> ANALYTICS[Statistics & Analytics]
+```
+
+## ⚡ Core Capabilities
+
+| Capability | Purpose |
+|---|---|
+| 🗓️ **Shift Planning** | Build and manage workforce schedules |
+| 🧩 **Constraint Handling** | Apply operational and personnel restrictions |
+| 👥 **Personnel Management** | Keep workforce context available to planners |
+| ⚖️ **Workload Awareness** | Support fairer and more informed assignment decisions |
+| 🕘 **Historical Tracking** | Preserve previous assignments and operational context |
+| 📊 **Statistics** | Turn scheduling history into useful visibility |
+| 🧑‍💼 **Administration** | Centralize planning workflows for authorized users |
+
+## 🧠 Engineering Focus
+
+The value of this project is in modelling a real operational domain.
+
+Key engineering concerns include:
+
+- Business-rule modelling
+- Constraint-aware scheduling
+- Data consistency
+- Validation flows
+- Historical records
+- Reporting and analytics
+- Maintainable domain architecture
+- Administrative workflow design
+
+> [!NOTE]
+> The public version is intentionally separated from real municipal personnel information. Any future demo will contain **synthetic users and synthetic scheduling data only**.
+
+## 🎬 Live Demo
+
+**Coming soon.**
+
+The public demo is planned as a recruiter-friendly sandbox showing representative scheduling rules and workflows without exposing production data.
+
+## 🖼️ Product Showcase
+
+| Planning | Personnel | Analytics |
+|---|---|---|
+| 🗓️ Coming soon | 👥 Coming soon | 📊 Coming soon |
+
+A real workflow GIF will be added when the portfolio-safe build is ready.
+
+## 🛣️ Project Status
+
+- [x] Public case-study repository
+- [x] Problem / solution narrative
+- [x] Scheduling architecture overview
+- [ ] Publish sanitized code
+- [ ] Add real tech stack
+- [ ] Add screenshots
+- [ ] Add workflow GIF
+- [ ] Document rule engine / domain model
+- [ ] Deploy synthetic demo
+
+## 💡 Why This Project Matters
+
+This project demonstrates the ability to turn **messy, rule-heavy operational requirements** into a structured software system.
+
+That means working beyond forms and database tables — understanding the domain, modelling constraints and designing software that remains understandable as complexity increases.
+
+---
+
+<div align="center">
+
+### Built by [Taha Kubilay](https://github.com/tahakubilay)
+
+`Workforce Management` · `Scheduling` · `Business Rules` · `Enterprise Software` · `Analytics`
+
+[⬆ Back to top](#shift-planning--workforce-management-system)
+
+</div>
