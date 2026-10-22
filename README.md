@@ -4,16 +4,14 @@
 
 ### Rule-driven workforce scheduling for complex municipal operations
 
-<a href="https://github.com/tahakubilay/shift-planning-system">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=900&center=true&vCenter=true&width=820&lines=Complex+rules.+Real+people.+One+schedule.;Constraints+%E2%86%92+Planning+%E2%86%92+Analytics;Workforce+scheduling+beyond+a+calendar" alt="Animated project overview" />
-</a>
+<img src="./assets/hero.svg" alt="Animated project header" />
 
 <br/>
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Taha%20Kubilay-181717?style=for-the-badge&logo=github)](https://github.com/tahakubilay)
 [![Repository](https://img.shields.io/badge/Repository-Shift%20Planning-0A66C2?style=for-the-badge&logo=github)](https://github.com/tahakubilay/shift-planning-system)
-[![Status](https://img.shields.io/badge/Status-Portfolio%20Build-7C3AED?style=for-the-badge)](#-project-status)
-[![Demo](https://img.shields.io/badge/Live%20Demo-Coming%20Soon-F59E0B?style=for-the-badge&logo=vercel)](#-live-demo)
+![Status](https://img.shields.io/badge/Status-Portfolio%20Build-7C3AED?style=for-the-badge)
+![Demo](https://img.shields.io/badge/Live%20Demo-Coming%20Soon-F59E0B?style=for-the-badge&logo=vercel)
 
 <br/>
 
