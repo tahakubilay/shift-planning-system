@@ -109,6 +109,12 @@ The live route opens the calendar / scheduling workspace, making it possible to 
 
 ## 🖼️ Live Product Screenshots
 
+### Demo Entry — Tutorials Disabled
+
+[![Shift Planning clean demo entry](./assets/screenshots/login-clean-desktop.png)](https://shift-planning-system-drab.vercel.app/takvim)
+
+The onboarding/tutorial overlay is disabled before capture so the interface is shown cleanly.
+
 ### Desktop — Calendar / Scheduling Workspace
 
 [![Shift Planning desktop screenshot](./assets/screenshots/takvim-desktop.png)](https://shift-planning-system-drab.vercel.app/takvim)
