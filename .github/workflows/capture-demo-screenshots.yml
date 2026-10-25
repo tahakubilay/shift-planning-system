@@ -1,0 +1,91 @@
+name: Capture live demo screenshots
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/capture-demo-screenshots.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Playwright
+        run: |
+          mkdir -p /tmp/livehide-pw
+          npm --prefix /tmp/livehide-pw init -y
+          npm --prefix /tmp/livehide-pw install playwright@1.56.1
+          npx --prefix /tmp/livehide-pw playwright install --with-deps chromium
+
+      - name: Capture production screenshots
+        env:
+          DEMO_URL: https://shift-planning-system-drab.vercel.app/takvim
+          NODE_PATH: /tmp/livehide-pw/node_modules
+        run: |
+          mkdir -p assets/screenshots
+          node <<'NODE'
+          const { chromium, devices } = require('playwright');
+
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+
+            const desktop = await browser.newContext({
+              viewport: { width: 1440, height: 1000 },
+              deviceScaleFactor: 1
+            });
+            const desktopPage = await desktop.newPage();
+            await desktopPage.goto(process.env.DEMO_URL, {
+              waitUntil: 'networkidle',
+              timeout: 60000
+            });
+            await desktopPage.waitForTimeout(2500);
+            await desktopPage.screenshot({
+              path: 'assets/screenshots/takvim-desktop.png',
+              fullPage: true
+            });
+            await desktop.close();
+
+            const mobile = await browser.newContext({
+              ...devices['iPhone 13']
+            });
+            const mobilePage = await mobile.newPage();
+            await mobilePage.goto(process.env.DEMO_URL, {
+              waitUntil: 'networkidle',
+              timeout: 60000
+            });
+            await mobilePage.waitForTimeout(2500);
+            await mobilePage.screenshot({
+              path: 'assets/screenshots/takvim-mobile.png',
+              fullPage: true
+            });
+            await mobile.close();
+
+            await browser.close();
+          })().catch((error) => {
+            console.error(error);
+            process.exit(1);
+          });
+          NODE
+
+      - name: Commit refreshed screenshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/screenshots/takvim-desktop.png assets/screenshots/takvim-mobile.png
+          if git diff --cached --quiet; then
+            echo "Screenshots are unchanged."
+          else
+            git commit -m "docs: refresh live demo screenshots"
+            git push
+          fi
