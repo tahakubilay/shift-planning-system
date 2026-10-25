@@ -23,7 +23,7 @@ jobs:
 
       - name: Install Playwright
         run: |
-          mkdir -p /tmp/livehide-pw
+          mkdir -p /tmp/shift-planning-pw
           npm --prefix /tmp/livehide-pw init -y
           npm --prefix /tmp/livehide-pw install playwright@1.56.1
           npx --prefix /tmp/livehide-pw playwright install --with-deps chromium
@@ -34,74 +34,7 @@ jobs:
           NODE_PATH: /tmp/livehide-pw/node_modules
         run: |
           mkdir -p assets/screenshots
-          node <<'NODE'
-          const { chromium, devices } = require('playwright');
-
-          (async () => {
-            const browser = await chromium.launch({ headless: true });
-
-            const desktop = await browser.newContext({
-              viewport: { width: 1440, height: 1000 },
-              deviceScaleFactor: 1
-            });
-            const desktopPage = await desktop.newPage();
-            await desktopPage.goto(process.env.DEMO_URL, {
-              waitUntil: 'networkidle',
-              timeout: 60000
-            });
-            await desktopPage.waitForTimeout(4000);
-
-            const diagnostics = await desktopPage.evaluate(() => ({
-              url: location.href,
-              title: document.title,
-              buttons: [...document.querySelectorAll('button')].map((el, i) => ({
-                i,
-                text: (el.innerText || el.textContent || '').trim(),
-                aria: el.getAttribute('aria-label'),
-                title: el.getAttribute('title')
-              })).filter(x => x.text || x.aria || x.title),
-              links: [...document.querySelectorAll('a')].map((el, i) => ({
-                i,
-                text: (el.innerText || el.textContent || '').trim(),
-                href: el.getAttribute('href')
-              })).filter(x => x.text),
-              inputs: [...document.querySelectorAll('input')].map((el, i) => ({
-                i,
-                type: el.type,
-                name: el.getAttribute('name'),
-                placeholder: el.getAttribute('placeholder'),
-                aria: el.getAttribute('aria-label')
-              }))
-            }));
-            console.log('PAGE_DIAGNOSTICS=' + JSON.stringify(diagnostics));
-
-            await desktopPage.screenshot({
-              path: 'assets/screenshots/takvim-desktop.png',
-              fullPage: true
-            });
-            await desktop.close();
-
-            const mobile = await browser.newContext({
-              ...devices['iPhone 13']
-            });
-            const mobilePage = await mobile.newPage();
-            await mobilePage.goto(process.env.DEMO_URL, {
-              waitUntil: 'networkidle',
-              timeout: 60000
-            });
-            await mobilePage.waitForTimeout(2500);
-            await mobilePage.screenshot({
-              path: 'assets/screenshots/takvim-mobile.png',
-              fullPage: true
-            });
-            await mobile.close();
-
-            await browser.close();
-          })().catch((error) => {
-            console.error(error);
-            process.exit(1);
-          });
-          NODE
+          node scripts/capture-demo-screenshots.js
 
       - name: Commit refreshed screenshots
         run: |
