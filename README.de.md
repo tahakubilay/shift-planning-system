@@ -105,6 +105,12 @@ Die Live-Route öffnet den Kalender- bzw. Planungsbereich, sodass das Produkt oh
 
 ## 🖼️ Live-Produkt-Screenshots
 
+### Demo-Einstieg — Tutorials deaktiviert
+
+[![Sauberer Demo-Einstieg der Schichtplanung](./assets/screenshots/login-clean-desktop.png)](https://shift-planning-system-drab.vercel.app/takvim)
+
+Vor der Aufnahme werden die Tutorial-Overlays deaktiviert, damit die Oberfläche sauber dargestellt wird.
+
 ### Desktop — Kalender / Planungsbereich
 
 [![Desktop-Screenshot der Schichtplanung](./assets/screenshots/takvim-desktop.png)](https://shift-planning-system-drab.vercel.app/takvim)
