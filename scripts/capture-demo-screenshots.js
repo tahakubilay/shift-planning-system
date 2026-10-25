@@ -64,9 +64,21 @@ async function enterDemoAndOpenCalendar(page) {
       throw new Error('Enter Demo button not found after guide cleanup. Buttons: ' + JSON.stringify(buttonTexts));
     }
 
-    await page.waitForURL(url => !url.pathname.startsWith('/login'), {
-      timeout: 20000
-    });
+    // Demo entry may persist client-side state without performing a hard navigation.
+    // Give the app time to store the selected demo role, then reopen the target route
+    // in the SAME browser context so that session/local state is preserved.
+    await page.waitForTimeout(3000);
+
+    const postLoginState = await page.evaluate(() => ({
+      url: location.href,
+      localStorageKeys: Object.keys(localStorage),
+      sessionStorageKeys: Object.keys(sessionStorage),
+      bodyPreview: (document.body.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 600)
+    }));
+    console.log('POST_ENTER_DEMO_STATE=' + JSON.stringify(postLoginState));
+
+    await page.goto(target, { waitUntil: 'networkidle', timeout: 60000 });
+    await page.waitForTimeout(4000);
   }
 
   if (!new URL(page.url()).pathname.startsWith('/takvim')) {
@@ -100,8 +112,19 @@ async function enterDemoAndOpenCalendar(page) {
   console.log('FINAL_PAGE_DIAGNOSTICS=' + JSON.stringify(diagnostics));
 }
 
-async function capture(context, path) {
+async function capture(context, path, loginPath = null) {
   const page = await context.newPage();
+
+  if (loginPath) {
+    await page.goto(process.env.DEMO_URL, { waitUntil: 'networkidle', timeout: 60000 });
+    await page.waitForTimeout(5000);
+    if (new URL(page.url()).pathname.startsWith('/login')) {
+      await disableGuides(page);
+      await page.waitForTimeout(1500);
+      await page.screenshot({ path: loginPath, fullPage: true });
+    }
+  }
+
   await enterDemoAndOpenCalendar(page);
   await page.screenshot({ path, fullPage: true });
   await context.close();
@@ -115,7 +138,8 @@ async function capture(context, path) {
       viewport: { width: 1440, height: 1000 },
       deviceScaleFactor: 1
     }),
-    'assets/screenshots/takvim-desktop.png'
+    'assets/screenshots/takvim-desktop.png',
+    'assets/screenshots/login-clean-desktop.png'
   );
 
   await capture(
