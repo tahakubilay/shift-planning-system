@@ -14,7 +14,7 @@
   <a href="https://github.com/tahakubilay"><img src="https://img.shields.io/badge/Portfolio-Taha%20Kubilay-181717?style=for-the-badge&logo=github" alt="Portfolio" /></a>
   <a href="https://github.com/tahakubilay/shift-planning-system"><img src="https://img.shields.io/badge/Source-Shift%20Planning-0A66C2?style=for-the-badge&logo=github" alt="Repository" /></a>
   <img src="https://img.shields.io/badge/Status-Portfolio%20Build-7C3AED?style=for-the-badge" alt="Status" />
-  <img src="https://img.shields.io/badge/Demo-Coming%20Soon-F59E0B?style=for-the-badge" alt="Demo coming soon" />
+  <a href="https://shift-planning-system-drab.vercel.app/takvim"><img src="https://img.shields.io/badge/Live%20Demo-Open%20App-16A34A?style=for-the-badge&logo=vercel&logoColor=white" alt="Open live demo" /></a>
 </p>
 
 <br/>
@@ -35,7 +35,7 @@
 | 🧠 **Core Challenge** | Translating operational policy into maintainable scheduling logic |
 | 📊 **Beyond Scheduling** | History, tracking, statistics and operational visibility |
 | 🔐 **Public Version** | Synthetic data only |
-| 🚀 **Demo** | Planned portfolio sandbox |
+| 🚀 **Live Demo** | [Open the deployed scheduling interface](https://shift-planning-system-drab.vercel.app/takvim) |
 
 ## 🔎 Why This Exists
 
@@ -96,19 +96,28 @@ Key engineering concerns include:
 > [!NOTE]
 > The public version is intentionally separated from real municipal personnel information. Any future demo will contain **synthetic users and synthetic scheduling data only**.
 
-## 🎬 Live Demo
+## 🌐 Live Demo
 
-**Coming soon.**
+The scheduling interface is deployed and can be explored directly:
 
-The public demo is planned as a recruiter-friendly sandbox showing representative scheduling rules and workflows without exposing production data.
+### **[→ Open Shift Planning System](https://shift-planning-system-drab.vercel.app/takvim)**
 
-## 🖼️ Product Showcase
+The live route opens the calendar / scheduling workspace, making it possible to inspect the product without cloning or configuring the project locally.
 
-| Planning | Personnel | Analytics |
-|---|---|---|
-| 🗓️ Coming soon | 👥 Coming soon | 📊 Coming soon |
+> [!NOTE]
+> The public-facing deployment is intended as a portfolio showcase. Real municipal personnel data should never be exposed through the demo.
 
-A real workflow GIF will be added when the portfolio-safe build is ready.
+## 🖼️ Live Product Screenshots
+
+### Desktop — Calendar / Scheduling Workspace
+
+[![Shift Planning desktop screenshot](./assets/screenshots/takvim-desktop.png)](https://shift-planning-system-drab.vercel.app/takvim)
+
+### Mobile — Responsive View
+
+[![Shift Planning mobile screenshot](./assets/screenshots/takvim-mobile.png)](https://shift-planning-system-drab.vercel.app/takvim)
+
+These screenshots are captured directly from the deployed Vercel application by the repository's Playwright screenshot workflow, so the portfolio images can be refreshed from the real running product rather than recreated manually.
 
 ## 🛣️ Project Status
 
@@ -117,10 +126,10 @@ A real workflow GIF will be added when the portfolio-safe build is ready.
 - [x] Scheduling architecture overview
 - [ ] Publish sanitized code
 - [ ] Add real tech stack
-- [ ] Add screenshots
+- [x] Add automated live screenshots
 - [ ] Add workflow GIF
 - [ ] Document rule engine / domain model
-- [ ] Deploy synthetic demo
+- [x] Deploy public portfolio demo
 
 ## 💡 Why This Project Matters
 
