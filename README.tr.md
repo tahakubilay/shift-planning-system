@@ -12,7 +12,7 @@
   <a href="https://github.com/tahakubilay"><img src="https://img.shields.io/badge/Portfolio-Taha%20Kubilay-181717?style=for-the-badge&logo=github" alt="Portfolio" /></a>
   <a href="https://github.com/tahakubilay/shift-planning-system"><img src="https://img.shields.io/badge/Source-Shift%20Planning-0A66C2?style=for-the-badge&logo=github" alt="Repository" /></a>
   <img src="https://img.shields.io/badge/Status-Portfolio%20Build-7C3AED?style=for-the-badge" alt="Durum" />
-  <img src="https://img.shields.io/badge/Demo-Coming%20Soon-F59E0B?style=for-the-badge" alt="Demo yakında" />
+  <a href="https://shift-planning-system-drab.vercel.app/takvim"><img src="https://img.shields.io/badge/Canlı%20Demo-Uygulamayı%20Aç-16A34A?style=for-the-badge&logo=vercel&logoColor=white" alt="Canlı demoyu aç" /></a>
 </p>
 
 ![Last Commit](https://img.shields.io/github/last-commit/tahakubilay/shift-planning-system?style=flat-square)
@@ -31,7 +31,7 @@
 | 🧠 **Ana Zorluk** | Operasyonel politikaları sürdürülebilir planlama mantığına dönüştürmek |
 | 📊 **Planlamanın Ötesi** | Geçmiş kayıtlar, takip, istatistikler ve operasyonel görünürlük |
 | 🔐 **Public Sürüm** | Yalnızca sentetik veri |
-| 🚀 **Demo** | Planlanan portföy sandbox'ı |
+| 🚀 **Canlı Demo** | [Yayındaki planlama arayüzünü aç](https://shift-planning-system-drab.vercel.app/takvim) |
 
 ## 🔎 Bu Sistem Neden Var?
 
@@ -92,19 +92,28 @@ Bu projenin asıl değeri gerçek bir operasyonel alanı doğru modellemektir.
 > [!NOTE]
 > Public sürüm gerçek belediye personel bilgilerinden bilinçli olarak ayrılmıştır. Gelecekteki demo yalnızca **sentetik kullanıcılar ve sentetik vardiya verileri** içerecektir.
 
-## 🎬 Canlı Demo
+## 🌐 Canlı Demo
 
-**Yakında.**
+Planlama arayüzü şu anda yayında ve doğrudan incelenebilir:
 
-Public demo, production verisi açığa çıkarmadan örnek planlama kurallarını ve workflow'ları gösterecek recruiter-dostu bir sandbox olarak planlanıyor.
+### **[→ Shift Planning System'i Aç](https://shift-planning-system-drab.vercel.app/takvim)**
 
-## 🖼️ Ürün Vitrini
+Canlı route doğrudan takvim / vardiya planlama çalışma alanını açar. Böylece projeyi clone etmeden veya lokal kurulum yapmadan ürün deneyimi incelenebilir.
 
-| Planlama | Personel | Analiz |
-|---|---|---|
-| 🗓️ Yakında | 👥 Yakında | 📊 Yakında |
+> [!NOTE]
+> Public deployment portföy gösterimi içindir. Gerçek belediye personel verileri demo üzerinden hiçbir zaman yayınlanmamalıdır.
 
-Portföye güvenli build hazır olduğunda gerçek bir workflow GIF'i eklenecek.
+## 🖼️ Canlı Ürün Görselleri
+
+### Desktop — Takvim / Planlama Çalışma Alanı
+
+[![Vardiya planlama desktop ekran görüntüsü](./assets/screenshots/takvim-desktop.png)](https://shift-planning-system-drab.vercel.app/takvim)
+
+### Mobil — Responsive Görünüm
+
+[![Vardiya planlama mobil ekran görüntüsü](./assets/screenshots/takvim-mobile.png)](https://shift-planning-system-drab.vercel.app/takvim)
+
+Bu görüntüler repository içindeki Playwright screenshot workflow'u tarafından doğrudan yayındaki Vercel uygulamasından alınır. Böylece portföy görselleri yeniden çizilmiş mockup'lardan değil, gerçek çalışan üründen gelir.
 
 ## 🛣️ Proje Durumu
 
@@ -113,10 +122,10 @@ Portföye güvenli build hazır olduğunda gerçek bir workflow GIF'i eklenecek.
 - [x] Planlama mimarisi özeti
 - [ ] Temizlenmiş kaynak kodu yayınla
 - [ ] Gerçek teknoloji yığınını ekle
-- [ ] Ekran görüntülerini ekle
+- [x] Otomatik canlı ekran görüntülerini ekle
 - [ ] Workflow GIF'ini ekle
 - [ ] Rule engine / domain modelini belgele
-- [ ] Sentetik demoyu deploy et
+- [x] Public portföy demosunu deploy et
 
 ## 💡 Bu Proje Neden Önemli?
 
