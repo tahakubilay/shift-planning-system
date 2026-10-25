@@ -105,6 +105,12 @@ Canlı route doğrudan takvim / vardiya planlama çalışma alanını açar. Bö
 
 ## 🖼️ Canlı Ürün Görselleri
 
+### Demo Girişi — Tutorial Kapalı
+
+[![Vardiya planlama temiz demo giriş ekranı](./assets/screenshots/login-clean-desktop.png)](https://shift-planning-system-drab.vercel.app/takvim)
+
+Görüntü alınmadan önce tutorial/rehber katmanları kapatılır; böylece arayüz temiz haliyle gösterilir.
+
 ### Desktop — Takvim / Planlama Çalışma Alanı
 
 [![Vardiya planlama desktop ekran görüntüsü](./assets/screenshots/takvim-desktop.png)](https://shift-planning-system-drab.vercel.app/takvim)
