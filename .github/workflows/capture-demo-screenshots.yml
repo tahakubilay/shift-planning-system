@@ -49,7 +49,32 @@ jobs:
               waitUntil: 'networkidle',
               timeout: 60000
             });
-            await desktopPage.waitForTimeout(2500);
+            await desktopPage.waitForTimeout(4000);
+
+            const diagnostics = await desktopPage.evaluate(() => ({
+              url: location.href,
+              title: document.title,
+              buttons: [...document.querySelectorAll('button')].map((el, i) => ({
+                i,
+                text: (el.innerText || el.textContent || '').trim(),
+                aria: el.getAttribute('aria-label'),
+                title: el.getAttribute('title')
+              })).filter(x => x.text || x.aria || x.title),
+              links: [...document.querySelectorAll('a')].map((el, i) => ({
+                i,
+                text: (el.innerText || el.textContent || '').trim(),
+                href: el.getAttribute('href')
+              })).filter(x => x.text),
+              inputs: [...document.querySelectorAll('input')].map((el, i) => ({
+                i,
+                type: el.type,
+                name: el.getAttribute('name'),
+                placeholder: el.getAttribute('placeholder'),
+                aria: el.getAttribute('aria-label')
+              }))
+            }));
+            console.log('PAGE_DIAGNOSTICS=' + JSON.stringify(diagnostics));
+
             await desktopPage.screenshot({
               path: 'assets/screenshots/takvim-desktop.png',
               fullPage: true
