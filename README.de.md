@@ -12,7 +12,7 @@
   <a href="https://github.com/tahakubilay"><img src="https://img.shields.io/badge/Portfolio-Taha%20Kubilay-181717?style=for-the-badge&logo=github" alt="Portfolio" /></a>
   <a href="https://github.com/tahakubilay/shift-planning-system"><img src="https://img.shields.io/badge/Source-Shift%20Planning-0A66C2?style=for-the-badge&logo=github" alt="Repository" /></a>
   <img src="https://img.shields.io/badge/Status-Portfolio%20Build-7C3AED?style=for-the-badge" alt="Status" />
-  <img src="https://img.shields.io/badge/Demo-Coming%20Soon-F59E0B?style=for-the-badge" alt="Demo kommt bald" />
+  <a href="https://shift-planning-system-drab.vercel.app/takvim"><img src="https://img.shields.io/badge/Live%20Demo-App%20öffnen-16A34A?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo öffnen" /></a>
 </p>
 
 ![Last Commit](https://img.shields.io/github/last-commit/tahakubilay/shift-planning-system?style=flat-square)
@@ -31,7 +31,7 @@
 | 🧠 **Kernaufgabe** | Betriebliche Richtlinien in wartbare Planungslogik übersetzen |
 | 📊 **Mehr als Planung** | Historie, Nachverfolgung, Statistiken und operative Transparenz |
 | 🔐 **Öffentliche Version** | Ausschließlich synthetische Daten |
-| 🚀 **Demo** | Geplante Portfolio-Sandbox |
+| 🚀 **Live Demo** | [Bereitgestellte Planungsoberfläche öffnen](https://shift-planning-system-drab.vercel.app/takvim) |
 
 ## 🔎 Warum dieses System existiert
 
@@ -92,19 +92,28 @@ Wichtige Engineering-Themen:
 > [!NOTE]
 > Die öffentliche Version ist bewusst von realen kommunalen Personaldaten getrennt. Jede spätere Demo wird ausschließlich **synthetische Nutzer und synthetische Planungsdaten** enthalten.
 
-## 🎬 Live Demo
+## 🌐 Live Demo
 
-**Kommt bald.**
+Die Planungsoberfläche ist bereits deployed und kann direkt geöffnet werden:
 
-Die öffentliche Demo ist als recruiter-freundliche Sandbox geplant, die repräsentative Regeln und Workflows zeigt, ohne Produktionsdaten offenzulegen.
+### **[→ Shift Planning System öffnen](https://shift-planning-system-drab.vercel.app/takvim)**
 
-## 🖼️ Produktvorschau
+Die Live-Route öffnet den Kalender- bzw. Planungsbereich, sodass das Produkt ohne lokales Setup direkt angesehen werden kann.
 
-| Planung | Personal | Analytics |
-|---|---|---|
-| 🗓️ Demnächst | 👥 Demnächst | 📊 Demnächst |
+> [!NOTE]
+> Das öffentliche Deployment dient als Portfolio-Demo. Reale kommunale Personaldaten dürfen darüber nicht veröffentlicht werden.
 
-Ein echter Workflow-GIF wird ergänzt, sobald der portfolio-sichere Build fertig ist.
+## 🖼️ Live-Produkt-Screenshots
+
+### Desktop — Kalender / Planungsbereich
+
+[![Desktop-Screenshot der Schichtplanung](./assets/screenshots/takvim-desktop.png)](https://shift-planning-system-drab.vercel.app/takvim)
+
+### Mobile — Responsive Ansicht
+
+[![Mobiler Screenshot der Schichtplanung](./assets/screenshots/takvim-mobile.png)](https://shift-planning-system-drab.vercel.app/takvim)
+
+Die Screenshots werden mit Playwright direkt aus der bereitgestellten Vercel-Anwendung erzeugt. Dadurch stammen die Portfolio-Grafiken aus dem tatsächlich laufenden Produkt.
 
 ## 🛣️ Projektstatus
 
@@ -113,10 +122,10 @@ Ein echter Workflow-GIF wird ergänzt, sobald der portfolio-sichere Build fertig
 - [x] Architekturübersicht der Planung
 - [ ] Bereinigten Quellcode veröffentlichen
 - [ ] Tatsächlichen Tech-Stack dokumentieren
-- [ ] Screenshots ergänzen
+- [x] Automatische Live-Screenshots ergänzen
 - [ ] Workflow-GIF ergänzen
 - [ ] Rule Engine / Domänenmodell dokumentieren
-- [ ] Synthetische Demo deployen
+- [x] Öffentliche Portfolio-Demo deployen
 
 ## 💡 Warum dieses Projekt wichtig ist
 
