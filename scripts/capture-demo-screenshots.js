@@ -25,9 +25,25 @@ async function enterDemoAndOpenCalendar(page) {
   if (new URL(page.url()).pathname.startsWith('/login')) {
     await disableGuides(page);
 
-    const enterDemo = page.getByRole('button', { name: /^enter demo$/i });
-    await enterDemo.waitFor({ state: 'visible', timeout: 10000 });
-    await enterDemo.click();
+    await page.waitForTimeout(1200);
+
+    const clicked = await page.evaluate(() => {
+      const button = [...document.querySelectorAll('button')].find(
+        el => (el.innerText || el.textContent || '').trim().toLowerCase() === 'enter demo'
+      );
+      if (!button) return false;
+      button.click();
+      return true;
+    });
+
+    if (!clicked) {
+      const buttonTexts = await page.evaluate(() =>
+        [...document.querySelectorAll('button')].map(
+          el => (el.innerText || el.textContent || '').trim()
+        ).filter(Boolean)
+      );
+      throw new Error('Enter Demo button not found after guide cleanup. Buttons: ' + JSON.stringify(buttonTexts));
+    }
 
     await page.waitForURL(url => !url.pathname.startsWith('/login'), {
       timeout: 20000
