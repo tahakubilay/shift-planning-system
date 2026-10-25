@@ -27,14 +27,33 @@ async function enterDemoAndOpenCalendar(page) {
 
     await page.waitForTimeout(1200);
 
-    const clicked = await page.evaluate(() => {
-      const button = [...document.querySelectorAll('button')].find(
+    const roles = page.locator('input[type="radio"][name="demo-role"]');
+    if (await roles.count()) {
+      const checked = page.locator('input[type="radio"][name="demo-role"]:checked');
+      if (await checked.count() === 0) {
+        await roles.first().check({ force: true });
+        await page.waitForTimeout(500);
+      }
+    }
+
+    const loginState = await page.evaluate(() => ({
+      radios: [...document.querySelectorAll('input[type="radio"][name="demo-role"]')].map(el => ({
+        value: el.value,
+        checked: el.checked,
+        disabled: el.disabled,
+        label: el.closest('label')?.innerText?.trim() || null
+      })),
+      enterDemo: [...document.querySelectorAll('button')].filter(
         el => (el.innerText || el.textContent || '').trim().toLowerCase() === 'enter demo'
-      );
-      if (!button) return false;
-      button.click();
-      return true;
-    });
+      ).map(el => ({ disabled: el.disabled, text: (el.innerText || '').trim() }))
+    }));
+    console.log('LOGIN_STATE=' + JSON.stringify(loginState));
+
+    const enterDemoButton = page.locator('button').filter({ hasText: /^Enter Demo$/i }).first();
+    const clicked = await enterDemoButton.count() > 0;
+    if (clicked) {
+      await enterDemoButton.click({ force: true });
+    }
 
     if (!clicked) {
       const buttonTexts = await page.evaluate(() =>
