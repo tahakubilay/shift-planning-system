@@ -110,6 +110,16 @@ async function enterDemoAndOpenCalendar(page) {
   }));
 
   console.log('FINAL_PAGE_DIAGNOSTICS=' + JSON.stringify(diagnostics));
+
+  // Return session state for a second viewport without logging its values.
+  return await page.evaluate(() =>
+    Object.fromEntries(
+      Array.from({ length: sessionStorage.length }, (_, i) => {
+        const key = sessionStorage.key(i);
+        return [key, sessionStorage.getItem(key)];
+      })
+    )
+  );
 }
 
 async function capture(context, path, loginPath = null) {
@@ -125,15 +135,16 @@ async function capture(context, path, loginPath = null) {
     }
   }
 
-  await enterDemoAndOpenCalendar(page);
+  const session = await enterDemoAndOpenCalendar(page);
   await page.screenshot({ path, fullPage: true });
   await context.close();
+  return session;
 }
 
 (async () => {
   const browser = await chromium.launch({ headless: true });
 
-  await capture(
+  const desktopSession = await capture(
     await browser.newContext({
       viewport: { width: 1440, height: 1000 },
       deviceScaleFactor: 1
@@ -142,8 +153,18 @@ async function capture(context, path, loginPath = null) {
     'assets/screenshots/login-clean-desktop.png'
   );
 
+  const mobileContext = await browser.newContext({ ...devices['iPhone 13'] });
+
+  // Demo authentication is sessionStorage-based. Reuse the authenticated
+  // desktop demo session in the mobile viewport without persisting it anywhere.
+  await mobileContext.addInitScript((session) => {
+    for (const [key, value] of Object.entries(session || {})) {
+      if (value !== null) sessionStorage.setItem(key, value);
+    }
+  }, desktopSession);
+
   await capture(
-    await browser.newContext({ ...devices['iPhone 13'] }),
+    mobileContext,
     'assets/screenshots/takvim-mobile.png'
   );
 
