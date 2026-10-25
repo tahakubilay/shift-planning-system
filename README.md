@@ -8,16 +8,11 @@
 
 <p><a href="./README.md"><strong>English</strong></a> · <a href="./README.de.md">Deutsch</a> · <a href="./README.tr.md">Türkçe</a></p>
 
-<br/>
-
 <p>
-  <a href="https://github.com/tahakubilay"><img src="https://img.shields.io/badge/Portfolio-Taha%20Kubilay-181717?style=for-the-badge&logo=github" alt="Portfolio" /></a>
-  <a href="https://github.com/tahakubilay/shift-planning-system"><img src="https://img.shields.io/badge/Source-Shift%20Planning-0A66C2?style=for-the-badge&logo=github" alt="Repository" /></a>
-  <img src="https://img.shields.io/badge/Status-Portfolio%20Build-7C3AED?style=for-the-badge" alt="Status" />
+  <a href="https://github.com/tahakubilay"><img src="https://img.shields.io/badge/Taha%20Kubilay-GitHub-181717?style=for-the-badge&logo=github" alt="Taha Kubilay on GitHub" /></a>
+  <a href="https://github.com/tahakubilay/shift-planning-system"><img src="https://img.shields.io/badge/Repository-Shift%20Planning-0A66C2?style=for-the-badge&logo=github" alt="Repository" /></a>
   <a href="https://shift-planning-system-drab.vercel.app/takvim"><img src="https://img.shields.io/badge/Live%20Demo-Open%20App-16A34A?style=for-the-badge&logo=vercel&logoColor=white" alt="Open live demo" /></a>
 </p>
-
-<br/>
 
 ![Last Commit](https://img.shields.io/github/last-commit/tahakubilay/shift-planning-system?style=flat-square)
 ![Repo Size](https://img.shields.io/github/repo-size/tahakubilay/shift-planning-system?style=flat-square)
@@ -26,33 +21,24 @@
 
 ---
 
-## ✨ At a Glance
+## Overview
 
-| | |
-|---|---|
-| 🏛️ **Context** | Complex municipal workforce operations |
-| 🗓️ **Problem** | Shift planning under many interacting rules and constraints |
-| 🧠 **Core Challenge** | Translating operational policy into maintainable scheduling logic |
-| 📊 **Beyond Scheduling** | History, tracking, statistics and operational visibility |
-| 🔐 **Public Version** | Synthetic data only |
-| 🚀 **Live Demo** | [Open the deployed scheduling interface](https://shift-planning-system-drab.vercel.app/takvim) |
+Shift Planning & Workforce Management System is designed for operational environments where scheduling is governed by many interacting rules, personnel constraints and organizational requirements.
 
-## 🔎 Why This Exists
+Instead of treating scheduling as a simple calendar problem, the system models it as a business-rule and constraint-management problem. It brings workforce planning, validation, historical tracking and operational visibility into a single workflow.
 
-A normal calendar can assign someone to a shift.
+## Core Challenges
 
-A real workforce system has to answer much harder questions:
+A real workforce planning system must answer questions such as:
 
-- **Who is eligible?**
-- **Which rules apply?**
-- **What assignments conflict?**
-- **How should workload be distributed?**
-- **What happened historically?**
-- **Can managers understand the result?**
+- Who is eligible for a given shift?
+- Which personnel and operational rules apply?
+- Which assignments conflict with existing constraints?
+- How should workload be distributed?
+- What historical context should influence planning?
+- How can managers review and understand the resulting schedule?
 
-That turns scheduling into a **constraint and business-rule problem**, not a simple CRUD workflow.
-
-## ⚙️ Scheduling Flow
+## Scheduling Flow
 
 ```mermaid
 flowchart LR
@@ -66,82 +52,44 @@ flowchart LR
     HISTORY --> ANALYTICS[Statistics & Analytics]
 ```
 
-## ⚡ Core Capabilities
+## Core Capabilities
 
 | Capability | Purpose |
 |---|---|
-| 🗓️ **Shift Planning** | Build and manage workforce schedules |
-| 🧩 **Constraint Handling** | Apply operational and personnel restrictions |
-| 👥 **Personnel Management** | Keep workforce context available to planners |
-| ⚖️ **Workload Awareness** | Support fairer and more informed assignment decisions |
-| 🕘 **Historical Tracking** | Preserve previous assignments and operational context |
-| 📊 **Statistics** | Turn scheduling history into useful visibility |
-| 🧑‍💼 **Administration** | Centralize planning workflows for authorized users |
+| **Shift Planning** | Create and manage workforce schedules |
+| **Constraint Handling** | Apply operational and personnel restrictions |
+| **Personnel Management** | Keep relevant workforce context available during planning |
+| **Workload Awareness** | Support balanced and informed assignment decisions |
+| **Historical Tracking** | Preserve previous assignments and operational context |
+| **Statistics & Analytics** | Turn scheduling history into operational insight |
+| **Administration** | Centralize planning workflows for authorized users |
 
-## 🧠 Engineering Focus
+## Engineering Focus
 
-The value of this project is in modelling a real operational domain.
+The project focuses on modelling a rule-heavy operational domain in a way that remains understandable and maintainable as complexity grows.
 
 Key engineering concerns include:
 
 - Business-rule modelling
 - Constraint-aware scheduling
 - Data consistency
-- Validation flows
+- Validation workflows
 - Historical records
 - Reporting and analytics
 - Maintainable domain architecture
 - Administrative workflow design
 
-> [!NOTE]
-> The public version is intentionally separated from real municipal personnel information. Any future demo will contain **synthetic users and synthetic scheduling data only**.
+## Live Demo
 
-## 🌐 Live Demo
-
-The scheduling interface is deployed and can be explored directly:
+The deployed application can be explored directly:
 
 ### **[→ Open Shift Planning System](https://shift-planning-system-drab.vercel.app/takvim)**
 
-The live route opens the calendar / scheduling workspace, making it possible to inspect the product without cloning or configuring the project locally.
+The demo environment uses synthetic users and synthetic scheduling data. No real municipal personnel records are included in the public deployment.
 
-> [!NOTE]
-> The public-facing deployment is intended as a portfolio showcase. Real municipal personnel data should never be exposed through the demo.
+## Data & Privacy
 
-## 🖼️ Live Product Screenshots
-
-### Demo Entry — Tutorials Disabled
-
-[![Shift Planning clean demo entry](./assets/screenshots/login-clean-desktop.png)](https://shift-planning-system-drab.vercel.app/takvim)
-
-The onboarding/tutorial overlay is disabled before capture so the interface is shown cleanly.
-
-### Desktop — Calendar / Scheduling Workspace
-
-[![Shift Planning desktop screenshot](./assets/screenshots/takvim-desktop.png)](https://shift-planning-system-drab.vercel.app/takvim)
-
-### Mobile — Responsive View
-
-[![Shift Planning mobile screenshot](./assets/screenshots/takvim-mobile.png)](https://shift-planning-system-drab.vercel.app/takvim)
-
-These screenshots are captured directly from the deployed Vercel application by the repository's Playwright screenshot workflow, so the portfolio images can be refreshed from the real running product rather than recreated manually.
-
-## 🛣️ Project Status
-
-- [x] Public case-study repository
-- [x] Problem / solution narrative
-- [x] Scheduling architecture overview
-- [ ] Publish sanitized code
-- [ ] Add real tech stack
-- [x] Add automated live screenshots
-- [ ] Add workflow GIF
-- [ ] Document rule engine / domain model
-- [x] Deploy public portfolio demo
-
-## 💡 Why This Project Matters
-
-This project demonstrates the ability to turn **messy, rule-heavy operational requirements** into a structured software system.
-
-That means working beyond forms and database tables — understanding the domain, modelling constraints and designing software that remains understandable as complexity increases.
+This repository and its public demo are intentionally separated from real operational personnel data. Public-facing examples use synthetic data so the system can be demonstrated without exposing private records.
 
 ---
 
@@ -150,7 +98,5 @@ That means working beyond forms and database tables — understanding the domain
 ### Built by [Taha Kubilay](https://github.com/tahakubilay)
 
 `Workforce Management` · `Scheduling` · `Business Rules` · `Enterprise Software` · `Analytics`
-
-[⬆ Back to top](#shift-planning--workforce-management-system)
 
 </div>
