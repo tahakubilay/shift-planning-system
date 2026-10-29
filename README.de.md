@@ -4,7 +4,7 @@
 
 ### Regelbasierte Personaleinsatzplanung für komplexe kommunale Abläufe
 
-<img src="./assets/hero.svg" alt="Animierter Projektkopf" />
+<img src="./assets/hero.svg" alt="Visuelle Projektidentität von Shift Planning" />
 
 <p><a href="./README.md">English</a> · <a href="./README.de.md"><strong>Deutsch</strong></a> · <a href="./README.tr.md">Türkçe</a></p>
 
